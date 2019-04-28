@@ -22,7 +22,7 @@ mkdir Projetos
 
 ## 4. Clona repositório no git
 
-git clone https://github.com/mauriciolongato/costurApp.git
+git clone https://github.com/mauriciolongato/costurApp-pi.git
 
 
 ## 5. Instalando postgres
