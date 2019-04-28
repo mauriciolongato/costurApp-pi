@@ -84,38 +84,38 @@ Consfigurações do projeto:
 
 ## 8. Start com a maquina
 
- 1. Variaveis de ambiente
- 		echo "export DISPLAY=:0" >> ~/.bash_profile
-	
+	1. Variaveis de ambiente
+		echo "export DISPLAY=:0" >> ~/.bash_profile
+
 	2. Criar os serviços no supervisord
 
-	Cria o serviço para o costurapp_core	
+		Cria o serviço para o costurapp_core	
 		/etc/systemd/system/costurapp_core.service
-  
-   [Unit]
-		 Description=controle_core
-		
-   [Service]
-		 ExecStart=/home/pi/Projetos/costurApp/controle_core/launcher.sh
-  
-   [Install]
-		 WantedBy=multi-user.target
 
- Cria o serviço para o pdf
-		sudo nano 
-		/etc/systemd/system/costurapp_pdf.service
+	   	[Unit]
+		Description=controle_core
+
+	   	[Service]
+		ExecStart=/home/pi/Projetos/costurApp/controle_core/launcher.sh
+
+	   	[Install]
+		WantedBy=multi-user.target
+
+ 		Cria o serviço para o pdf
+		sudo nano /etc/systemd/system/costurapp_pdf.service
+		
 		[Unit]
 		Description=pdf_render
   
-  [Service]
+  		[Service]
 		ExecStart=/home/pi/Projetos/costurApp/pdf_render/launcher.sh
 
-  [Install]
+  		[Install]
 		WantedBy=multi-user.target
 
-Habilita o serviço
-sudo systemctl enable costurapp_core.service
-sudo systemctl enable costurapp_pdf.service
-
+## 9. Habilita os serviços
+	sudo systemctl enable costurapp_core.service
+	sudo systemctl enable costurapp_pdf.service
+	sudo reboot
 
 
