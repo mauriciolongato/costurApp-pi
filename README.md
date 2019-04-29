@@ -118,4 +118,11 @@ Consfigurações do projeto:
 	sudo systemctl enable costurapp_pdf.service
 	sudo reboot
 
+# Registrando as pistoladas
 
+Exemplo da url: http://192.168.0.109:8000/tracking?pistola=Pistola_1&cod_barras=150&data_criacao=2019/03/30%2012:27:03.000
+
+São 3 parametros: 
+	- pistola
+	- cod_barras
+	- data_criacao
