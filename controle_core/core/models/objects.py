@@ -231,11 +231,9 @@ class BackLog(models.Model):
 
 # Log_Trabalho
 class LogTrabalho(models.Model):
-    pistola = models.ForeignKey(Pistola, on_delete=models.CASCADE)
-    funcionario = models.ForeignKey(Funcionario, on_delete=models.CASCADE)
-    id_leitura = models.IntegerField()
+    pistola = models.CharField(max_length=500)
     cod_barras = models.CharField(max_length=500)
-    data_criacao = models.DateTimeField(auto_now_add=True)
+    data_criacao = models.DateTimeField()
 
     class Meta:
         verbose_name_plural = 'Log_Trabalhos'
