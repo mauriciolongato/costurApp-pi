@@ -12,7 +12,7 @@ app = Flask(__name__)
 @app.route('/', methods=['GET', 'POST'])
 def box_pdf_render_pdfkit():
     if request.method == 'POST':
-        json_data = json.loads(request.data.decode('utf-8'))
+        json_data = json.loads(request.data)
 
         # Cria as imagens dos códigos de barra
         body_with_barcode = []
